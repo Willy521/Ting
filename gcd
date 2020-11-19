@@ -1,0 +1,62 @@
+#include <iostream> 
+using namespace std;
+int gcd(int, int);//function head
+int i, j;
+int answer1,answer2, answer3;
+
+
+//main function
+int main()
+{
+    
+    for (i = 1; i < 21; i++)
+    {
+        cout << i << "  ";
+    }
+    cout << endl<< "======================================================";
+
+
+
+    for (i = 1; i < 21; i++)
+    {
+        cout << endl;// let each row on a new line
+        for (j = 1; j < 21; j++)
+        {
+            gcd(i,j);
+        }
+    }
+    return 0;
+}
+
+//function body
+int gcd(int a, int b)
+{
+    int h;
+    while (a != 0 and b != 0)
+    {
+        if (a >= b)
+        {
+            a = a % b;
+        }
+        else if (b > a)
+        {
+            b = b % a;
+        }
+    }
+
+    h = 1;
+    if (a >= b)
+    {
+        cout << a << "  ";
+        answer1 = a;
+        h = h + 1;
+    }
+
+    else
+    {
+        cout << b << "  ";
+        answer1 = b;
+        h = h + 1;
+    }
+ return(answer1);
+}
