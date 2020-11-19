@@ -3,35 +3,55 @@ using namespace std;
 int gcd(int, int);//function head
 int i, j;
 int answer1,answer2, answer3;
-
+int h;
 
 //main function
 int main()
 {
     
+    cout << "   ";
     for (i = 1; i < 21; i++)
     {
-        cout << i << "  ";
+        cout <<" "<< i;
     }
-    cout << endl<< "======================================================";
+    cout << endl<< "======================================================"<< endl;
 
+    h = 1;
 
 
     for (i = 1; i < 21; i++)
     {
-        cout << endl;// let each row on a new line
+        cout << h << "|"<<"  ";
+        //cout << endl;// let each row on a new line
         for (j = 1; j < 21; j++)
         {
-            gcd(i,j);
+            if (j == 20)
+            {
+                gcd(i, j);
+                cout << endl;
+            }
+            else
+            {
+                gcd(i, j);
+            }
+
         }
+        h = h + 1;
     }
+
+    answer1 = 5;
+    answer2 = 1;
+    answer3 = 6;
     return 0;
 }
+
+
+
 
 //function body
 int gcd(int a, int b)
 {
-    int h;
+
     while (a != 0 and b != 0)
     {
         if (a >= b)
@@ -44,19 +64,18 @@ int gcd(int a, int b)
         }
     }
 
-    h = 1;
     if (a >= b)
     {
-        cout << a << "  ";
+        cout << a << " ";
         answer1 = a;
-        h = h + 1;
     }
 
     else
     {
-        cout << b << "  ";
+        cout <<b << " ";
         answer1 = b;
-        h = h + 1;
+
     }
+    
  return(answer1);
 }
